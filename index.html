@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111118">
+
+  <title>به‌زودی | Elnus</title>
+
+  <meta
+    name="description"
+    content="Elnus؛ در حال آماده‌سازی تجربه‌ای تازه برای دسترسی ساده‌تر به خدمات دیجیتال."
+  >
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --background: #111118;
+      --surface: #1B1B25;
+      --primary: #FF7566;
+      --text: #F7F7FA;
+      --muted: #92929F;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      font-family: Vazirmatn, Tahoma, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(
+          ellipse at 50% 43%,
+          rgba(255, 117, 102, 0.09),
+          transparent 55%
+        ),
+        var(--background);
+    }
+
+    .page {
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 20px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero {
+      width: 100%;
+      max-width: 680px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 17px;
+      margin-bottom: 25px;
+      border: 1px solid rgba(255, 117, 102, 0.2);
+      border-radius: 100px;
+      background: rgba(255, 117, 102, 0.07);
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 12px var(--primary);
+      animation: pulse 1.8s infinite;
+    }
+
+    h1 {
+      font-size: clamp(29px, 5vw, 52px);
+      line-height: 1.6;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
+    }
+
+    h1 span {
+      color: var(--primary);
+    }
+
+    .description {
+      max-width: 540px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 2.2;
+    }
+
+    .visual {
+      width: 150px;
+      height: 150px;
+      margin: 35px auto 25px;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+
+    .visual::before,
+    .visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255, 117, 102, 0.13);
+      border-radius: 50%;
+    }
+
+    .visual::after {
+      inset: 14px;
+      border-color: rgba(255, 117, 102, 0.2);
+    }
+
+    .visual-icon {
+      width: 82px;
+      height: 82px;
+      border-radius: 26px;
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+      z-index: 1;
+    }
+
+    .visual-icon svg {
+      width: 44px;
+      height: 44px;
+    }
+
+    .orbit {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 18px rgba(255, 117, 102, 0.6);
+    }
+
+    .orbit.one {
+      top: 18px;
+      right: 22px;
+    }
+
+    .orbit.two {
+      bottom: 22px;
+      left: 12px;
+      width: 7px;
+      height: 7px;
+      background: #7657F6;
+      box-shadow: 0 0 18px rgba(118, 87, 246, 0.6);
+    }
+
+    .bottom-text {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      padding: 0 15px;
+      color: #777783;
+      font-size: 11px;
+      text-align: center;
+      direction: ltr;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(0.75);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 20px;
+      }
+
+      .status {
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: clamp(27px, 8vw, 36px);
+        margin-bottom: 12px;
+      }
+
+      .description {
+        font-size: 13px;
+        line-height: 2;
+      }
+
+      .visual {
+        width: 125px;
+        height: 125px;
+        margin: 25px auto 20px;
+      }
+
+      .visual-icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 22px;
+      }
+
+      .visual-icon svg {
+        width: 38px;
+        height: 38px;
+      }
+
+      .bottom-text {
+        font-size: 11px;
+      }
+
+      footer {
+        bottom: 12px;
+        font-size: 10px;
+      }
+    }
+
+    @media (max-height: 600px) {
+      .status {
+        margin-bottom: 12px;
+      }
+
+      .visual {
+        width: 95px;
+        height: 95px;
+        margin: 12px auto;
+      }
+
+      .visual-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 18px;
+      }
+
+      .visual-icon svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      h1 {
+        margin-bottom: 8px;
+      }
+
+      .description {
+        line-height: 1.8;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+    <section class="hero">
+
+      <div class="status">
+        <span class="status-dot"></span>
+        به‌زودی
+      </div>
+
+      <h1>
+        یک تجربه تازه در
+        <span>خدمات دیجیتال</span>
+      </h1>
+
+      <p class="description">
+        در حال آماده‌سازی بستری هوشمند برای دسترسی ساده‌تر
+        به خدمات دیجیتال هستیم.
+        <br>
+        به‌زودی، دنیای خدمات دیجیتال در دسترس شماست.
+      </p>
+
+      <div class="visual" aria-hidden="true">
+
+        <span class="orbit one"></span>
+        <span class="orbit two"></span>
+
+        <div class="visual-icon">
+          <svg
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M32 7L38.5 23.5L55 30L38.5 36.5L32 53L25.5 36.5L9 30L25.5 23.5L32 7Z"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M49 42L52 49L59 52L52 55L49 62L46 55L39 52L46 49L49 42Z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+
+      </div>
+
+      <p class="bottom-text">
+        Elnus؛ خدمات دیجیتال، ساده‌تر از همیشه
+      </p>
+
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Elnus — Digital Services, Simplified
+  </footer>
+
+</body>
+</html>
